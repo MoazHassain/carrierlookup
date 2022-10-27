@@ -1,0 +1,138 @@
+button,
+.button,
+.menu-button
+{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    // background-color: transparent;
+}
+
+.menu-button 
+{
+    * 
+    {
+        pointer-events: none;
+    }
+}
+
+.filled-button
+{
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    text-transform: unset;
+    color: var(--clr-white-000);
+    border-radius: 5px;
+    border: none;
+    padding: 10px 16px;
+    background-color: var(--clr-orange-000);
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 10px 70px 0 rgba(var(--clr-orange-000-rgb), 0.30);
+    transition: 0.2s ease-in-out;
+
+    svg 
+    {
+        --size: 24px;
+        width: var(--size);
+        height: var(--size);
+
+        path 
+        {
+            fill: var(--clr-white-000);
+        }
+    }
+    
+
+    &:hover,
+    &:focus
+    {
+        background-color: rgba(var(--clr-orange-000-rgb), 0.85);
+        box-shadow: 0 20px 50px 0 rgba(var(--clr-orange-000-rgb), 0.30);
+
+        svg 
+        {
+            path 
+            {
+                fill: var(--clr-white-000);
+            }
+        }
+    }
+
+    @media screen and (max-width: 1500px) 
+    {
+        font-size: 16px;
+        height: 48px;
+        padding: 10px 16px;
+
+        svg 
+        {
+            --size: 20px;
+        }
+    }
+}
+
+.tonal-button
+{
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    text-transform: unset;
+    color: var(--clr-red-000);
+    border-radius: 5px;
+    border: none;
+    padding: 10px 16px;
+    background-color: rgba(var(--clr-red-000-rgb), 0.10);
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    // box-shadow: 0 10px 70px 0 rgba(var(--clr-orange-000-rgb), 0.30);
+    transition: 0.2s ease-in-out;
+
+    svg 
+    {
+        --size: 24px;
+        width: var(--size);
+        height: var(--size);
+
+        path 
+        {
+            fill: var(--clr-red-000);
+        }
+    }
+    
+
+    &:hover,
+    &:focus
+    {
+        background-color: rgba(var(--clr-red-000-rgb), 0.20);
+
+        svg 
+        {
+            path 
+            {
+                fill: var(--clr-red-000);
+            }
+        }
+    }
+
+    @media screen and (max-width: 1500px) 
+    {
+        font-size: 16px;
+        height: 48px;
+        padding: 10px 16px;
+
+        svg 
+        {
+            --size: 20px;
+        }
+    }
+}

@@ -1,0 +1,358 @@
+:root {
+  --clr-orange-000: rgb(255, 121, 1);
+  --clr-orange-000-rgb: 255, 121, 1;
+  --clr-red-000: rgb(255, 66, 66);
+  --clr-red-000-rgb: 255, 66, 66;
+  --clr-brown-000: #BE8989;
+  --clr-brown-000-rgb: 190, 137, 137;
+  --clr-white-000: #ffffff;
+  --clr-white-000-rgb: 255, 255, 255;
+  --clr-white-100: rgb(252, 251, 255);
+  --clr-white-100-rgb: 252, 251, 255;
+  --clr-black-000: #000000;
+  --clr-black-000-rgb: 0, 0, 0;
+  --clr-black-100: #36373E;
+  --clr-black-100-rgb: 54, 55, 62;
+  --clr-black-200: rgb(125, 125, 126);
+  --clr-black-200-rgb: 125, 125, 126;
+  --clr-success: #1ee682;
+  --clr-warning: #ffc107;
+  --clr-danger: #dc3545;
+}
+
+html {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--clr-white-100);
+  min-height: 120vh;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+/** scrollbar **/
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+*:hover {
+  scrollbar-width: thin;
+  scrollbar-color: var(--clr-orange-000) transparent;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+*::-webkit-scrollbar-track:hover {
+  background-color: rgba(var(--clr-black-000-rgb), 0.15);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(var(--clr-orange-000-rgb), 1);
+  border-radius: 10px;
+  border: 4px solid transparent;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--clr-orange-000);
+  border-radius: 10px;
+  border: 4px solid transparent;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+a {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  color: unset;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.headline1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0em;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: inherit;
+  text-transform: inherit;
+  color: var(--clr-black-000);
+}
+@media screen and (max-width: 1500px) {
+  .headline1 {
+    font-size: 24px;
+  }
+}
+
+.headline2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: inherit;
+  text-transform: inherit;
+  color: var(--clr-black-000);
+}
+@media screen and (max-width: 1500px) {
+  .headline2 {
+    font-size: 20px;
+  }
+}
+
+.headline3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.025em;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: inherit;
+  text-transform: inherit;
+  color: var(--clr-black-000);
+}
+@media screen and (max-width: 1500px) {
+  .headline3 {
+    font-size: 16px;
+  }
+}
+
+.body1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.025em;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: inherit;
+  text-transform: inherit;
+  color: var(--clr-black-000);
+}
+@media screen and (max-width: 1500px) {
+  .body1 {
+    font-size: 16px;
+  }
+}
+
+.fw-5 {
+  font-weight: 500;
+}
+
+.fw-4 {
+  font-weight: 400;
+}
+
+.container {
+  width: 1200px;
+  margin-inline: auto;
+  padding-inline: 26px;
+}
+@media screen and (max-width: 1025px) {
+  .container {
+    width: 960px;
+  }
+}
+@media screen and (max-width: 801px) {
+  .container {
+    width: 740px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .container {
+    width: 100%;
+    padding-inline: 20px;
+  }
+}
+
+section {
+  padding-block: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.title,
+.title-text {
+  margin-block: 8px 16px;
+}
+
+.desc-text {
+  margin-block: 8px;
+}
+
+.grid-col-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media screen and (max-width: 640px) {
+  .grid-col-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #E8E8E8;
+}
+
+button,
+.button,
+.menu-button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.menu-button * {
+  pointer-events: none;
+}
+
+.filled-button {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-transform: unset;
+  color: var(--clr-white-000);
+  border-radius: 5px;
+  border: none;
+  padding: 10px 16px;
+  background-color: var(--clr-orange-000);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 10px 70px 0 rgba(var(--clr-orange-000-rgb), 0.3);
+  transition: 0.2s ease-in-out;
+}
+.filled-button svg {
+  --size: 24px;
+  width: var(--size);
+  height: var(--size);
+}
+.filled-button svg path {
+  fill: var(--clr-white-000);
+}
+.filled-button:hover, .filled-button:focus {
+  background-color: rgba(var(--clr-orange-000-rgb), 0.85);
+  box-shadow: 0 20px 50px 0 rgba(var(--clr-orange-000-rgb), 0.3);
+}
+.filled-button:hover svg path, .filled-button:focus svg path {
+  fill: var(--clr-white-000);
+}
+@media screen and (max-width: 1500px) {
+  .filled-button {
+    font-size: 16px;
+    height: 48px;
+    padding: 10px 16px;
+  }
+  .filled-button svg {
+    --size: 20px;
+  }
+}
+
+.tonal-button {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-transform: unset;
+  color: var(--clr-red-000);
+  border-radius: 5px;
+  border: none;
+  padding: 10px 16px;
+  background-color: rgba(var(--clr-red-000-rgb), 0.1);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: 0.2s ease-in-out;
+}
+.tonal-button svg {
+  --size: 24px;
+  width: var(--size);
+  height: var(--size);
+}
+.tonal-button svg path {
+  fill: var(--clr-red-000);
+}
+.tonal-button:hover, .tonal-button:focus {
+  background-color: rgba(var(--clr-red-000-rgb), 0.2);
+}
+.tonal-button:hover svg path, .tonal-button:focus svg path {
+  fill: var(--clr-red-000);
+}
+@media screen and (max-width: 1500px) {
+  .tonal-button {
+    font-size: 16px;
+    height: 48px;
+    padding: 10px 16px;
+  }
+  .tonal-button svg {
+    --size: 20px;
+  }
+}/*# sourceMappingURL=home.css.map */
