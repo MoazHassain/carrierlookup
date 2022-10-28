@@ -1,0 +1,124 @@
+.sidebar
+{
+    background-color: var(--clr-black-000);
+    padding: 12px 30px;
+    width: 228px;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+    .sidebar-header
+    {
+        justify-content: center;
+        margin-bottom: 44px;
+    }
+
+    .sidebar-content
+    {
+
+    }
+
+    .nav-list
+    {
+        margin-left: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .nav-item,
+        .nav-item_inner
+        {
+            width: 100%;
+            padding-block: 12px;
+            color: var(--clr-black-200);
+            gap: 22px;
+            transition: 0.2s ease-in-out;
+
+            * 
+            {
+                pointer-events: none;
+            }
+            span 
+            {
+                font-size: 14px;
+            }
+
+            svg:not(.indicator) 
+            {
+                path 
+                {
+                    fill: var(--clr-black-200);
+                    transition: 0.2s ease-in-out;
+                }
+            }
+
+            .indicator
+            {
+                height: 6px;
+                width: 10px;
+                margin-left: auto;
+                transition: 0.2s ease-in-out;
+                path 
+                {
+                    transition: 0.2s ease-in-out;
+                }
+                
+            }
+
+            &:hover 
+            {
+                color: var(--clr-white-100);
+            }
+            &.nav-item_active
+            {
+                color: var(--clr-white-000);
+
+                svg:not(.indicator) 
+                {
+                    path 
+                    {
+                        fill: var(--clr-orange-000);
+                    }
+                }
+                .indicator
+                {
+                    transform: rotate(-180deg);
+                    path 
+                    {
+                        stroke: var(--clr-orange-000);
+                    }
+                }
+            }
+        }
+        .nav-item
+        {
+            position: relative;
+
+            &.nav-item_active
+            {
+                &::after
+                {
+                    content: "";
+                    position: absolute;
+                    width: 4px;
+                    height: 30px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: calc(0px - 30px);
+                    background-color: var(--clr-orange-000);
+                    
+                }
+            }
+        }
+
+        .nav-item_inner
+        {
+            gap: 12px;
+            span 
+            {
+                font-size: 12px;
+            }
+        }
+    }
+}

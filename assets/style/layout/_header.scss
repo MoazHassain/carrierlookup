@@ -1,4 +1,23 @@
-.header
+header
 {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 30px;
+    padding: 15px 30px;
+    background-color: var(--clr-black-000);
+
+    .balance-wrap
+    {
+        gap: 10px;
+        color: var(--clr-white-000);
+        
+        .orange 
+        {
+            font-size: 30px;
+        }
+    }
+
     
 }

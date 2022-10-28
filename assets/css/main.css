@@ -7,13 +7,13 @@
   --clr-brown-000-rgb: 190, 137, 137;
   --clr-white-000: #ffffff;
   --clr-white-000-rgb: 255, 255, 255;
-  --clr-white-100: rgb(252, 251, 255);
-  --clr-white-100-rgb: 252, 251, 255;
+  --clr-white-100: rgb(242, 242, 244);
+  --clr-white-100-rgb: 242, 242, 244;
   --clr-black-000: #000000;
   --clr-black-000-rgb: 0, 0, 0;
   --clr-black-100: #36373E;
   --clr-black-100-rgb: 54, 55, 62;
-  --clr-black-200: rgb(125, 125, 126);
+  --clr-black-200: #7d7d7e;
   --clr-black-200-rgb: 125, 125, 126;
   --clr-success: #1ee682;
   --clr-warning: #ffc107;
@@ -122,7 +122,6 @@ a {
   -webkit-font-smoothing: antialiased;
   text-decoration: inherit;
   text-transform: inherit;
-  color: var(--clr-black-000);
 }
 @media screen and (max-width: 1500px) {
   .headline1 {
@@ -135,12 +134,11 @@ a {
   font-size: 20px;
   font-weight: 500;
   line-height: 100%;
-  letter-spacing: 0.02em;
+  letter-spacing: 0em;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-decoration: inherit;
   text-transform: inherit;
-  color: var(--clr-black-000);
 }
 @media screen and (max-width: 1500px) {
   .headline2 {
@@ -153,12 +151,11 @@ a {
   font-size: 16px;
   font-weight: 500;
   line-height: 100%;
-  letter-spacing: 0.025em;
+  letter-spacing: 0em;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-decoration: inherit;
   text-transform: inherit;
-  color: var(--clr-black-000);
 }
 @media screen and (max-width: 1500px) {
   .headline3 {
@@ -176,7 +173,6 @@ a {
   -webkit-font-smoothing: antialiased;
   text-decoration: inherit;
   text-transform: inherit;
-  color: var(--clr-black-000);
 }
 @media screen and (max-width: 1500px) {
   .body1 {
@@ -190,6 +186,10 @@ a {
 
 .fw-4 {
   font-weight: 400;
+}
+
+.fw-3 {
+  font-weight: 300;
 }
 
 .container {
@@ -251,10 +251,18 @@ section {
   align-items: center;
 }
 
+.orange {
+  color: var(--clr-orange-000);
+}
+
 .divider {
   width: 100%;
   height: 1px;
   background-color: #E8E8E8;
+}
+
+li {
+  list-style: none;
 }
 
 button,
@@ -355,4 +363,188 @@ button,
   .tonal-button svg {
     --size: 20px;
   }
+}
+
+.dropdown {
+  position: relative;
+  z-index: 1;
+}
+.dropdown .dropdown-button {
+  gap: 12px;
+  padding: 10px;
+  padding-right: 16px;
+  background-color: var(--clr-white-000);
+  box-shadow: 0px 10px 20px rgba(var(--clr-black-000-rgb), 0.07);
+  border-radius: 100px;
+  z-index: 1;
+}
+.dropdown .dropdown-button img {
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+}
+.dropdown .dropdown-button .indicator {
+  width: 16px;
+  height: 8px;
+}
+.dropdown .dropdown-content {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 20px;
+  padding-top: 80px;
+  background-color: var(--clr-white-000);
+  border-radius: 30px 30px 10px 10px;
+  border: 1px solid var(--clr-white-100);
+  box-shadow: 0px 30px 20px -20px rgba(198, 211, 232, 0.2);
+  z-index: -1;
+  transform: translateY(0%);
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: top;
+  transition: 0.2s ease-in-out;
+}
+.dropdown .dropdown-content .nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.dropdown .dropdown-content .nav-list .nav-item {
+  font-size: 14px;
+  color: var(--clr-black-200);
+  transition: 0.2s ease-in-out;
+}
+.dropdown .dropdown-content .nav-list .nav-item:hover {
+  color: var(--clr-black-100);
+}
+.dropdown .dropdown-content button {
+  margin-top: 26px;
+  width: 100%;
+}
+.dropdown.menu-open .dropdown-content {
+  transform: translateY(0%);
+  opacity: 1;
+  visibility: visible;
+}
+
+.collapsible-wrap .collapsible-content {
+  max-height: 0px;
+  overflow-y: hidden;
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: 0.2s ease-in-out;
+}
+.collapsible-wrap .collapsible-content.active {
+  max-height: 100%;
+}
+
+header {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 30px;
+  padding: 15px 30px;
+  background-color: var(--clr-black-000);
+}
+header .balance-wrap {
+  gap: 10px;
+  color: var(--clr-white-000);
+}
+header .balance-wrap .orange {
+  font-size: 30px;
+}
+
+.sidebar {
+  background-color: var(--clr-black-000);
+  padding: 12px 30px;
+  width: 228px;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+.sidebar .sidebar-header {
+  justify-content: center;
+  margin-bottom: 44px;
+}
+.sidebar .nav-list {
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.sidebar .nav-list .nav-item,
+.sidebar .nav-list .nav-item_inner {
+  width: 100%;
+  padding-block: 12px;
+  color: var(--clr-black-200);
+  gap: 22px;
+  transition: 0.2s ease-in-out;
+}
+.sidebar .nav-list .nav-item *,
+.sidebar .nav-list .nav-item_inner * {
+  pointer-events: none;
+}
+.sidebar .nav-list .nav-item span,
+.sidebar .nav-list .nav-item_inner span {
+  font-size: 14px;
+}
+.sidebar .nav-list .nav-item svg:not(.indicator) path,
+.sidebar .nav-list .nav-item_inner svg:not(.indicator) path {
+  fill: var(--clr-black-200);
+  transition: 0.2s ease-in-out;
+}
+.sidebar .nav-list .nav-item .indicator,
+.sidebar .nav-list .nav-item_inner .indicator {
+  height: 6px;
+  width: 10px;
+  margin-left: auto;
+  transition: 0.2s ease-in-out;
+}
+.sidebar .nav-list .nav-item .indicator path,
+.sidebar .nav-list .nav-item_inner .indicator path {
+  transition: 0.2s ease-in-out;
+}
+.sidebar .nav-list .nav-item:hover,
+.sidebar .nav-list .nav-item_inner:hover {
+  color: var(--clr-white-100);
+}
+.sidebar .nav-list .nav-item.nav-item_active,
+.sidebar .nav-list .nav-item_inner.nav-item_active {
+  color: var(--clr-white-000);
+}
+.sidebar .nav-list .nav-item.nav-item_active svg:not(.indicator) path,
+.sidebar .nav-list .nav-item_inner.nav-item_active svg:not(.indicator) path {
+  fill: var(--clr-orange-000);
+}
+.sidebar .nav-list .nav-item.nav-item_active .indicator,
+.sidebar .nav-list .nav-item_inner.nav-item_active .indicator {
+  transform: rotate(-180deg);
+}
+.sidebar .nav-list .nav-item.nav-item_active .indicator path,
+.sidebar .nav-list .nav-item_inner.nav-item_active .indicator path {
+  stroke: var(--clr-orange-000);
+}
+.sidebar .nav-list .nav-item {
+  position: relative;
+}
+.sidebar .nav-list .nav-item.nav-item_active::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -30px;
+  background-color: var(--clr-orange-000);
+}
+.sidebar .nav-list .nav-item_inner {
+  gap: 12px;
+}
+.sidebar .nav-list .nav-item_inner span {
+  font-size: 12px;
 }/*# sourceMappingURL=main.css.map */

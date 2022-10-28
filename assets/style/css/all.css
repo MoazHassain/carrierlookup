@@ -1,141 +1,116 @@
-/*# sourceMappingURL=all.css.map */: touch;
-  overflow-y: scroll;
-  overflow-x: clip;
-  scroll-behavior: smooth;
+header {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 30px;
+  padding: 15px 30px;
+  background-color: var(--clr-black-000);
+}
+header .balance-wrap {
+  gap: 10px;
+  color: var(--clr-white-000);
+}
+header .balance-wrap .orange {
+  font-size: 30px;
 }
 
-body {
-  background-color: var(--clr-white-100);
-  min-height: 120vh;
+.sidebar {
+  background-color: var(--clr-black-000);
+  padding: 12px 30px;
+  width: 228px;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
 }
-
-*,
-::before,
-::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.sidebar .sidebar-header {
+  justify-content: center;
+  margin-bottom: 44px;
 }
-
-img {
-  display: block;
+.sidebar .nav-list {
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-
-/** scrollbar **/
-* {
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
-}
-*:hover {
-  scrollbar-width: thin;
-  scrollbar-color: var(--clr-orange-000) transparent;
-}
-
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 6px;
-}
-
-*::-webkit-scrollbar-track {
-  background: transparent;
-  -webkit-transition: 0.2s ease-in-out;
+.sidebar .nav-list .nav-item,
+.sidebar .nav-list .nav-item_inner {
+  width: 100%;
+  padding-block: 12px;
+  color: var(--clr-black-200);
+  gap: 22px;
   transition: 0.2s ease-in-out;
 }
-*::-webkit-scrollbar-track:hover {
-  background-color: rgba(var(--clr-black-000-rgb), 0.15);
+.sidebar .nav-list .nav-item *,
+.sidebar .nav-list .nav-item_inner * {
+  pointer-events: none;
 }
-
-*::-webkit-scrollbar-thumb {
-  background-color: rgba(var(--clr-orange-000-rgb), 1);
-  border-radius: 10px;
-  border: 4px solid transparent;
-  -webkit-transition: 0.2s ease-in-out;
+.sidebar .nav-list .nav-item span,
+.sidebar .nav-list .nav-item_inner span {
+  font-size: 14px;
+}
+.sidebar .nav-list .nav-item svg:not(.indicator) path,
+.sidebar .nav-list .nav-item_inner svg:not(.indicator) path {
+  fill: var(--clr-black-200);
   transition: 0.2s ease-in-out;
 }
-*::-webkit-scrollbar-thumb:hover {
+.sidebar .nav-list .nav-item .indicator,
+.sidebar .nav-list .nav-item_inner .indicator {
+  height: 6px;
+  width: 10px;
+  margin-left: auto;
+  transition: 0.2s ease-in-out;
+}
+.sidebar .nav-list .nav-item .indicator path,
+.sidebar .nav-list .nav-item_inner .indicator path {
+  transition: 0.2s ease-in-out;
+}
+.sidebar .nav-list .nav-item:hover,
+.sidebar .nav-list .nav-item_inner:hover {
+  color: var(--clr-white-100);
+}
+.sidebar .nav-list .nav-item.nav-item_active,
+.sidebar .nav-list .nav-item_inner.nav-item_active {
+  color: var(--clr-white-000);
+}
+.sidebar .nav-list .nav-item.nav-item_active svg:not(.indicator) path,
+.sidebar .nav-list .nav-item_inner.nav-item_active svg:not(.indicator) path {
+  fill: var(--clr-orange-000);
+}
+.sidebar .nav-list .nav-item.nav-item_active .indicator,
+.sidebar .nav-list .nav-item_inner.nav-item_active .indicator {
+  transform: rotate(-180deg);
+}
+.sidebar .nav-list .nav-item.nav-item_active .indicator path,
+.sidebar .nav-list .nav-item_inner.nav-item_active .indicator path {
+  stroke: var(--clr-orange-000);
+}
+.sidebar .nav-list .nav-item {
+  position: relative;
+}
+.sidebar .nav-list .nav-item.nav-item_active::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -30px;
   background-color: var(--clr-orange-000);
-  border-radius: 10px;
-  border: 4px solid transparent;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
 }
-
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/Poppins/Poppins-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
+.sidebar .nav-list .nav-item_inner {
+  gap: 12px;
 }
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/Poppins/Poppins-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-a {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  text-decoration: none;
-  color: unset;
-  display: block;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.headline1 {
-  font-family: "Poppins", sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 130%;
+.sidebar .nav-list .nav-item_inner span {
+  font-size: 12px;
+}/*# sourceMappingURL=all.css.map */00;
+  line-height: 100%;
   letter-spacing: 0em;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-decoration: inherit;
   text-transform: inherit;
-  color: var(--clr-black-000);
-}
-@media screen and (max-width: 1500px) {
-  .headline1 {
-    font-size: 24px;
-  }
-}
-
-.headline2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: 0.02em;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-decoration: inherit;
-  text-transform: inherit;
-  color: var(--clr-black-000);
-}
-@media screen and (max-width: 1500px) {
-  .headline2 {
-    font-size: 20px;
-  }
-}
-
-.headline3 {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: 0.025em;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-decoration: inherit;
-  text-transform: inherit;
-  color: var(--clr-black-000);
 }
 @media screen and (max-width: 1500px) {
   .headline3 {
@@ -153,7 +128,6 @@ a {
   -webkit-font-smoothing: antialiased;
   text-decoration: inherit;
   text-transform: inherit;
-  color: var(--clr-black-000);
 }
 @media screen and (max-width: 1500px) {
   .body1 {
@@ -167,6 +141,10 @@ a {
 
 .fw-4 {
   font-weight: 400;
+}
+
+.fw-3 {
+  font-weight: 300;
 }
 
 .container {
@@ -228,8 +206,16 @@ section {
   align-items: center;
 }
 
+.orange {
+  color: var(--clr-orange-000);
+}
+
 .divider {
   width: 100%;
   height: 1px;
   background-color: #E8E8E8;
+}
+
+li {
+  list-style: none;
 }/*# sourceMappingURL=all.css.map */

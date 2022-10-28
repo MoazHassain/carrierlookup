@@ -56,7 +56,7 @@ a
     -webkit-font-smoothing: antialiased;
     text-decoration: inherit;
     text-transform: inherit;
-    color: var(--clr-black-000);
+    // color: var(--clr-black-000);
 
     @media screen and (max-width: 1500px) 
     {
@@ -69,12 +69,12 @@ a
     font-size: 20px;
     font-weight: 500;
     line-height: 100%;
-    letter-spacing: 0.02em;
+    letter-spacing: 0em;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     text-decoration: inherit;
     text-transform: inherit;
-    color: var(--clr-black-000);
+    // color: var(--clr-black-000);
 
     @media screen and (max-width: 1500px) 
     {
@@ -88,12 +88,12 @@ a
     font-size: 16px; 
     font-weight: 500;
     line-height: 100%;
-    letter-spacing: 0.025em;
+    letter-spacing: 0em;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     text-decoration: inherit;
     text-transform: inherit;
-    color: var(--clr-black-000);
+    // color: var(--clr-black-000);
 
     @media screen and (max-width: 1500px) 
     {
@@ -111,7 +111,7 @@ a
     -webkit-font-smoothing: antialiased;
     text-decoration: inherit;
     text-transform: inherit;
-    color: var(--clr-black-000);
+    // color: var(--clr-black-000);
 
     @media screen and (max-width: 1500px) 
     {
@@ -142,4 +142,8 @@ a
 .fw-4 
 {
     font-weight: 400;
+}
+.fw-3 
+{
+    font-weight: 300;
 }
