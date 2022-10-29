@@ -2,3 +2,227 @@
 {
     margin-left: 228px;
 }
+
+main 
+{
+    padding: 30px;
+
+    .profile-info
+    {
+        grid-template-columns: auto 1fr;
+        gap: 30px;
+
+        .user-info-card
+        {
+            height: 100%;
+            padding-inline: 62px;
+            padding-top: 40px;
+            background-color: var(--clr-white-000);
+            border: 1px solid var(--clr-white-100);
+            border-radius: 10px;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // justify-content: center;
+            gap: 8px;
+
+            .body1 
+            {
+                font-size: 12px;
+                color: var(--clr-black-200);
+            }
+
+            .user-image
+            {
+                --size: 100px;
+                width: var(--size);
+                height: var(--size);
+                margin-bottom: 15px;
+            }
+            .user-name
+            {
+                margin-bottom: 4px;
+            }
+        }
+
+        .credit-card-wrap
+        {
+            padding: 70px 30px;
+
+            background-color: var(--clr-white-000);
+            border: 1px solid var(--clr-white-100);
+            border-radius: 10px;
+
+            .grid 
+            {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+            }
+
+            .credit-card-box
+            {
+                
+
+                input[type="radio"] 
+                {
+                    display: none;
+                }
+                .box 
+                {
+                    position: relative;
+                    border-radius: 10px;
+                    border: 1px solid var(--clr-white-100);
+                    padding: 36px 30px;
+                    
+                    display: flex;
+                    flex-direction: column;
+                    gap: 36px;
+
+                    transition: 0.2s ease-in-out;
+
+                    * 
+                    {
+                        transition: 0.2s ease-in-out;
+                    }
+
+                    h2 
+                    {
+                        color: var(--clr-black-200);
+
+                        &.card-number
+                        {
+                            color: rgba(var(--clr-black-200-rgb), 0.5);
+                        }
+                    }
+
+                    .delete-button 
+                    {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        --size: 30px;
+                        width: var(--size);
+                        height: var(--size);
+                        border-radius: 100px;
+                        padding: unset;
+                        background-color: rgba(var(--clr-black-200-rgb), 0.1);
+
+                        svg 
+                        {
+                            --size: 16px;
+                            width: var(--size);
+                            height: var(--size);
+
+                            path 
+                            {
+                                fill: rgba(var(--clr-black-200-rgb), 0.5);
+                            }
+                        }
+                    }
+
+                    // &:hover 
+                    // {
+                    //     border: 1px solid var(--clr-orange-000);
+
+                    //     h2 
+                    //     {
+                    //         color: var(--clr-black-000);
+                    //     }
+                    //     .delete-button 
+                    //     {
+                    //         background-color: rgba(var(--clr-red-000-rgb), 0.10);
+
+                    //         svg 
+                    //         {
+                    //             path 
+                    //             {
+                    //                 fill: var(--clr-red-000);
+                    //             }
+                    //         }
+                    //     }
+                    // }
+                }
+
+                input[type="radio"]:checked + .box 
+                {
+                    border: 1px solid var(--clr-orange-000);
+
+                    h2 
+                    {
+                        color: var(--clr-black-000);
+                    }
+                    .delete-button 
+                    {
+                        background-color: rgba(var(--clr-red-000-rgb), 0.10);
+
+                        svg 
+                        {
+                            path 
+                            {
+                                fill: var(--clr-red-000);
+                            }
+                        }
+                    }
+                }
+
+                
+            }
+        }
+    }
+
+    .profile-setting
+    {
+        margin-top: 30px;
+        padding-block: 30px;
+        background-color: var(--clr-white-000);
+        border: 1px solid var(--clr-white-100);
+        border-radius: 10px;
+
+        .tab-content-wrap
+        {
+            width: 60%;
+            margin-inline: auto;
+            padding-block: 30px;
+        }
+
+        #notification
+        {   
+            
+            .field-wrap
+            {
+                margin: 0px 0 10px 70px;
+
+                // display: grid;
+                gap: 30px;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                display: none;
+
+                .text-field
+                {
+                    margin-top: 0px;
+                }
+
+                &.active
+                {
+                    display: grid;
+                }
+            }
+            .text-field 
+            {
+                p 
+                {
+                    color: var(--clr-black-200);
+                }
+                span 
+                {
+                    color: var(--clr-orange-000);
+                }
+            }
+            button[type="submit"]
+            {
+                margin-top: 36px;
+            }
+        }
+    }
+}

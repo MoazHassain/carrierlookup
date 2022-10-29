@@ -7,12 +7,12 @@
   --clr-brown-000-rgb: 190, 137, 137;
   --clr-white-000: #ffffff;
   --clr-white-000-rgb: 255, 255, 255;
-  --clr-white-100: rgb(242, 242, 244);
+  --clr-white-100: #f2f2f4;
   --clr-white-100-rgb: 242, 242, 244;
   --clr-black-000: #000000;
   --clr-black-000-rgb: 0, 0, 0;
-  --clr-black-100: #36373E;
-  --clr-black-100-rgb: 54, 55, 62;
+  --clr-black-100: rgb(38, 38, 46);
+  --clr-black-100-rgb: 38, 38, 46;
   --clr-black-200: #7d7d7e;
   --clr-black-200-rgb: 125, 125, 126;
   --clr-success: #1ee682;
@@ -28,7 +28,7 @@ html {
 }
 
 body {
-  background-color: var(--clr-white-100);
+  background-color: #FCFBFF;
   min-height: 120vh;
 }
 
@@ -224,7 +224,7 @@ section {
 
 .title,
 .title-text {
-  margin-block: 8px 16px;
+  margin-bottom: 10px;
 }
 
 .desc-text {
@@ -257,8 +257,8 @@ section {
 
 .divider {
   width: 100%;
-  height: 1px;
-  background-color: #E8E8E8;
+  height: 2px;
+  background-color: var(--clr-white-100);
 }
 
 li {
@@ -365,6 +365,90 @@ button,
   }
 }
 
+input {
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  border: 1px solid var(--clr-white-100);
+  border-radius: 10px;
+  background-color: transparent;
+  color: var(--clr-black-100);
+  padding: 14px 20px;
+  transition: 0.2s ease-in-out;
+}
+input.text-input {
+  margin-top: 12px;
+  width: 100%;
+}
+input.text-input:hover, input.text-input:focus {
+  border: 1px solid var(--clr-black-200);
+}
+input:-moz-read-only {
+  color: gray;
+}
+input:read-only {
+  color: gray;
+}
+input:-moz-read-only:hover, input:-moz-read-only:focus {
+  border: 1px solid var(--clr-white-100);
+}
+input:read-only:hover, input:read-only:focus {
+  border: 1px solid var(--clr-white-100);
+}
+
+.field {
+  margin-block: 32px;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.checkbox-field input.custom-checkbox {
+  display: none;
+}
+.checkbox-field .switch {
+  width: 50px;
+  height: 30px;
+  border-radius: 100px;
+  border: 1px solid var(--clr-orange-000);
+  background-color: var(--clr-white-000);
+  position: relative;
+  transition: 0.2s ease-in-out;
+}
+.checkbox-field .switch::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%) translateX(5px);
+  --size: 20px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100px;
+  background-color: var(--clr-orange-000);
+  transition: 0.2s ease-in-out;
+}
+.checkbox-field span {
+  color: var(--clr-black-200);
+}
+.checkbox-field input.custom-checkbox:checked + .switch {
+  background-color: var(--clr-orange-000);
+}
+.checkbox-field input.custom-checkbox:checked + .switch::before {
+  transform: translateY(-50%) translateX(calc(100% + 3px));
+  background-color: var(--clr-white-000);
+}
+.checkbox-field input.custom-checkbox:checked ~ span {
+  color: var(--clr-black-000);
+}
+
 .dropdown {
   position: relative;
   z-index: 1;
@@ -439,6 +523,48 @@ button,
 }
 .collapsible-wrap .collapsible-content.active {
   max-height: 100%;
+}
+
+.tab-bar {
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+}
+.tab-bar .tab-button {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-transform: unset;
+  color: var(--clr-black-100);
+  border-bottom: 2px solid transparent;
+  background-color: transparent;
+  padding: 10px 16px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: 0.2s ease-in-out;
+}
+.tab-bar .tab-button.active-tab {
+  color: var(--clr-orange-000);
+  border-bottom: 2px solid var(--clr-orange-000);
+}
+
+.tab-content-wrap {
+  min-height: 450px;
+}
+.tab-content-wrap .text-center {
+  line-height: 450px;
+}
+.tab-content-wrap .tab-content {
+  display: none;
+}
+.tab-content-wrap .tab-content.active-content {
+  display: block;
 }
 
 header {

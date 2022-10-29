@@ -1,0 +1,53 @@
+.tab-bar
+{
+    display: flex;
+    width: fit-content;
+    margin-inline: auto;
+
+    .tab-button 
+    {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.025em;
+        text-transform: unset;
+        color: var(--clr-black-100);
+        border-bottom: 2px solid transparent;
+        background-color: transparent;
+        padding: 10px 16px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        transition: 0.2s ease-in-out;
+
+        &.active-tab 
+        {
+            color: var(--clr-orange-000);
+            border-bottom: 2px solid var(--clr-orange-000);
+        }
+
+    }
+}
+
+.tab-content-wrap
+{
+    min-height: 450px;
+    
+    .text-center
+    {
+        // min-height: 450px;
+        line-height: 450px;
+    }
+
+    .tab-content
+    {
+        display: none;
+
+        &.active-content 
+        {
+            display: block;
+        }
+    }
+}
