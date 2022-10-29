@@ -1,3 +1,5 @@
+// homepage style here
+
 #main-content
 {
     margin-left: 228px;
@@ -16,7 +18,7 @@ main
         {
             height: 100%;
             padding-inline: 62px;
-            padding-top: 40px;
+            padding-block: 40px;
             background-color: var(--clr-white-000);
             border: 1px solid var(--clr-white-100);
             border-radius: 10px;
@@ -120,28 +122,6 @@ main
                             }
                         }
                     }
-
-                    // &:hover 
-                    // {
-                    //     border: 1px solid var(--clr-orange-000);
-
-                    //     h2 
-                    //     {
-                    //         color: var(--clr-black-000);
-                    //     }
-                    //     .delete-button 
-                    //     {
-                    //         background-color: rgba(var(--clr-red-000-rgb), 0.10);
-
-                    //         svg 
-                    //         {
-                    //             path 
-                    //             {
-                    //                 fill: var(--clr-red-000);
-                    //             }
-                    //         }
-                    //     }
-                    // }
                 }
 
                 input[type="radio"]:checked + .box 
@@ -182,6 +162,7 @@ main
         .tab-content-wrap
         {
             width: 60%;
+            min-width: 300px;
             margin-inline: auto;
             padding-block: 30px;
         }
@@ -191,7 +172,7 @@ main
             
             .field-wrap
             {
-                margin: 0px 0 10px 70px;
+                margin: 0px 0 36px 70px;
 
                 // display: grid;
                 gap: 30px;
@@ -200,7 +181,7 @@ main
 
                 .text-field
                 {
-                    margin-top: 0px;
+                    margin-block: 0px;
                 }
 
                 &.active
@@ -222,6 +203,96 @@ main
             button[type="submit"]
             {
                 margin-top: 36px;
+            }
+        }
+    }
+}
+// responsiveness for multiple device
+@media screen and (max-width: 1024px) 
+{
+    main 
+    {
+        .profile-setting 
+        {
+            .tab-content-wrap
+            {
+                width: 80%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) 
+{
+    main 
+    {
+        .profile-info
+        {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@media screen and (max-width: 460px) 
+{
+    #main-content
+    {
+        margin-left: 0px;
+    }
+
+    main
+    {
+        .profile-setting
+        {
+            #notification
+            {
+                .field-wrap
+                {
+                    margin-inline: 0px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 460px) 
+{
+    main 
+    {
+        padding: 10px;
+
+        .profile-info 
+        {
+            .user-info-card
+            {
+                padding-inline: 15px;
+            }
+
+            .credit-card-wrap
+            {
+                padding: 40px 15px;
+
+                > h1 
+                {
+                    text-align: center;
+                }
+
+                .grid
+                {
+                    row-gap: 20px;
+                }
+            }
+
+            
+        }
+
+
+        .profile-setting 
+        {
+            .tab-content-wrap
+            {
+                width: 100%;
+                padding-inline: 10px;
             }
         }
     }

@@ -1,3 +1,5 @@
+// siderbar style here
+
 .sidebar
 {
     background-color: var(--clr-black-000);
@@ -7,6 +9,8 @@
     position: fixed;
     top: 0px;
     left: 0px;
+    z-index: 3;
+    transition: 0.2s ease-in-out;
 
     .sidebar-header
     {
@@ -14,10 +18,26 @@
         margin-bottom: 44px;
     }
 
-    .sidebar-content
+    .back-button 
     {
+        background-color: transparent;
+        position: absolute;
+        top: 15px;
+        left: 30px;
+        display: none;
 
+        svg 
+        {
+            path 
+            {
+                fill: var(--clr-white-000);
+            }
+        }
     }
+    // .sidebar-content
+    // {
+
+    // }
 
     .nav-list
     {
@@ -119,6 +139,25 @@
             {
                 font-size: 12px;
             }
+        }
+    }
+
+    &.active-sidebar 
+    {
+        width: 100%;
+        transform: translateX(0%);
+    }
+}
+
+@media screen and (max-width: 460px) 
+{
+    .sidebar
+    {
+        transform: translateX(-100%);
+
+        .back-button
+        {
+            display: block;
         }
     }
 }

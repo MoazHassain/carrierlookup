@@ -45,37 +45,37 @@ img {
 }
 
 /** scrollbar **/
-* {
+html {
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
 }
-*:hover {
+html:hover {
   scrollbar-width: thin;
   scrollbar-color: var(--clr-orange-000) transparent;
 }
 
 /* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
+html::-webkit-scrollbar {
   width: 6px;
 }
 
-*::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
   background: transparent;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
-*::-webkit-scrollbar-track:hover {
+html::-webkit-scrollbar-track:hover {
   background-color: rgba(var(--clr-black-000-rgb), 0.15);
 }
 
-*::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
   background-color: rgba(var(--clr-orange-000-rgb), 1);
   border-radius: 10px;
   border: 4px solid transparent;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
-*::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover {
   background-color: var(--clr-orange-000);
   border-radius: 10px;
   border: 4px solid transparent;
@@ -190,28 +190,6 @@ a {
 
 .fw-3 {
   font-weight: 300;
-}
-
-.container {
-  width: 1200px;
-  margin-inline: auto;
-  padding-inline: 26px;
-}
-@media screen and (max-width: 1025px) {
-  .container {
-    width: 960px;
-  }
-}
-@media screen and (max-width: 801px) {
-  .container {
-    width: 740px;
-  }
-}
-@media screen and (max-width: 640px) {
-  .container {
-    width: 100%;
-    padding-inline: 20px;
-  }
 }
 
 section {
@@ -414,7 +392,8 @@ input:read-only:hover, input:read-only:focus {
   display: none;
 }
 .checkbox-field .switch {
-  width: 50px;
+  flex-grow: 1;
+  min-width: 50px;
   height: 30px;
   border-radius: 100px;
   border: 1px solid var(--clr-orange-000);
@@ -437,6 +416,7 @@ input:read-only:hover, input:read-only:focus {
 }
 .checkbox-field span {
   color: var(--clr-black-200);
+  flex-grow: 0;
 }
 .checkbox-field input.custom-checkbox:checked + .switch {
   background-color: var(--clr-orange-000);
@@ -474,10 +454,10 @@ input:read-only:hover, input:read-only:focus {
 .dropdown .dropdown-content {
   position: absolute;
   top: 0px;
-  left: 0px;
   right: 0px;
+  min-width: 190px;
+  width: 100%;
   padding: 20px;
-  padding-top: 80px;
   background-color: var(--clr-white-000);
   border-radius: 30px 30px 10px 10px;
   border: 1px solid var(--clr-white-100);
@@ -488,6 +468,9 @@ input:read-only:hover, input:read-only:focus {
   visibility: hidden;
   transform-origin: top;
   transition: 0.2s ease-in-out;
+}
+.dropdown .dropdown-content .content-header {
+  margin-bottom: 40px;
 }
 .dropdown .dropdown-content .nav-list {
   display: flex;
@@ -512,6 +495,14 @@ input:read-only:hover, input:read-only:focus {
   visibility: visible;
 }
 
+@media screen and (max-width: 460px) {
+  .dropdown .dropdown-button {
+    padding-right: 10px;
+  }
+  .dropdown .dropdown-button span, .dropdown .dropdown-button svg {
+    display: none;
+  }
+}
 .collapsible-wrap .collapsible-content {
   max-height: 0px;
   overflow-y: hidden;
@@ -527,16 +518,21 @@ input:read-only:hover, input:read-only:focus {
 
 .tab-bar {
   display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-inline: auto;
+  justify-content: center;
+  width: 100%;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  /* Works on Chrome, Edge, and Safari */
+}
+.tab-bar::-webkit-scrollbar {
+  height: 0px;
 }
 .tab-bar .tab-button {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.025em;
+  white-space: nowrap;
   text-transform: unset;
   color: var(--clr-black-100);
   border-bottom: 2px solid transparent;
@@ -567,6 +563,11 @@ input:read-only:hover, input:read-only:focus {
   display: block;
 }
 
+@media screen and (max-width: 768px) {
+  .tab-bar {
+    justify-content: unset;
+  }
+}
 header {
   height: 90px;
   display: flex;
@@ -576,6 +577,13 @@ header {
   padding: 15px 30px;
   background-color: var(--clr-black-000);
 }
+header .responsive-logo {
+  display: none;
+  height: 42px;
+}
+header .responsive-logo img {
+  height: 100%;
+}
 header .balance-wrap {
   gap: 10px;
   color: var(--clr-white-000);
@@ -584,6 +592,20 @@ header .balance-wrap .orange {
   font-size: 30px;
 }
 
+@media screen and (max-width: 460px) {
+  header {
+    justify-content: unset;
+  }
+  header .responsive-logo {
+    display: block;
+    flex: 1 0 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  header .balance-wrap > *:nth-child(1) {
+    display: none;
+  }
+}
 .sidebar {
   background-color: var(--clr-black-000);
   padding: 12px 30px;
@@ -592,10 +614,22 @@ header .balance-wrap .orange {
   position: fixed;
   top: 0px;
   left: 0px;
+  z-index: 3;
+  transition: 0.2s ease-in-out;
 }
 .sidebar .sidebar-header {
   justify-content: center;
   margin-bottom: 44px;
+}
+.sidebar .back-button {
+  background-color: transparent;
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  display: none;
+}
+.sidebar .back-button svg path {
+  fill: var(--clr-white-000);
 }
 .sidebar .nav-list {
   margin-left: 12px;
@@ -673,4 +707,17 @@ header .balance-wrap .orange {
 }
 .sidebar .nav-list .nav-item_inner span {
   font-size: 12px;
+}
+.sidebar.active-sidebar {
+  width: 100%;
+  transform: translateX(0%);
+}
+
+@media screen and (max-width: 460px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar .back-button {
+    display: block;
+  }
 }/*# sourceMappingURL=main.css.map */

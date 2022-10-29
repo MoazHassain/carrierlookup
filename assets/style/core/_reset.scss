@@ -1,3 +1,5 @@
+// reseting the document
+
 html
 {
     -webkit-overflow-scrolling: touch;
@@ -34,7 +36,7 @@ img
 
 /** scrollbar **/
 
-*  /*    firefox   */
+html  /*    firefox   */
 {
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
@@ -48,12 +50,12 @@ img
 }
 
 /* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar 
+html::-webkit-scrollbar 
 {
     width: 6px;
 }
   
-*::-webkit-scrollbar-track 
+html::-webkit-scrollbar-track 
 {
     background: transparent;
     transition: 0.2s ease-in-out;
@@ -64,7 +66,7 @@ img
     }
 }
   
-*::-webkit-scrollbar-thumb 
+html::-webkit-scrollbar-thumb 
 {
     background-color: rgba(var(--clr-orange-000-rgb), 1);
     border-radius: 10px;

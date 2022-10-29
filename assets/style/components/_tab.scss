@@ -1,8 +1,23 @@
+// tab content and funtion
+
 .tab-bar
 {
     display: flex;
-    width: fit-content;
-    margin-inline: auto;
+    
+    justify-content: center;
+    width: 100%;
+    overflow-x: scroll;
+
+    scrollbar-width: none;
+    
+    
+
+    /* Works on Chrome, Edge, and Safari */
+    &::-webkit-scrollbar 
+    {
+        height: 0px;
+    }
+    
 
     .tab-button 
     {
@@ -10,6 +25,7 @@
         font-size: 16px;
         font-weight: 500;
         letter-spacing: 0.025em;
+        white-space: nowrap;
         text-transform: unset;
         color: var(--clr-black-100);
         border-bottom: 2px solid transparent;
@@ -34,7 +50,7 @@
 .tab-content-wrap
 {
     min-height: 450px;
-    
+
     .text-center
     {
         // min-height: 450px;
@@ -50,4 +66,12 @@
             display: block;
         }
     }
+}
+
+@media screen and (max-width: 768px) 
+{
+    .tab-bar 
+    {
+        justify-content: unset;
+    }    
 }

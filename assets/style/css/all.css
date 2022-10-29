@@ -1,110 +1,134 @@
-header {
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  gap: 30px;
-  padding: 15px 30px;
-  background-color: var(--clr-black-000);
-}
-header .balance-wrap {
-  gap: 10px;
-  color: var(--clr-white-000);
-}
-header .balance-wrap .orange {
-  font-size: 30px;
+html {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  overflow-x: clip;
+  scroll-behavior: smooth;
 }
 
-.sidebar {
-  background-color: var(--clr-black-000);
-  padding: 12px 30px;
-  width: 228px;
-  height: 100%;
-  position: fixed;
-  top: 0px;
-  left: 0px;
+body {
+  background-color: #FCFBFF;
+  min-height: 120vh;
 }
-.sidebar .sidebar-header {
-  justify-content: center;
-  margin-bottom: 44px;
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.sidebar .nav-list {
-  margin-left: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+
+img {
+  display: block;
 }
-.sidebar .nav-list .nav-item,
-.sidebar .nav-list .nav-item_inner {
-  width: 100%;
-  padding-block: 12px;
-  color: var(--clr-black-200);
-  gap: 22px;
+
+/** scrollbar **/
+html {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+html:hover {
+  scrollbar-width: thin;
+  scrollbar-color: var(--clr-orange-000) transparent;
+}
+
+/* Works on Chrome, Edge, and Safari */
+html::-webkit-scrollbar {
+  width: 6px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+  -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
-.sidebar .nav-list .nav-item *,
-.sidebar .nav-list .nav-item_inner * {
-  pointer-events: none;
+html::-webkit-scrollbar-track:hover {
+  background-color: rgba(var(--clr-black-000-rgb), 0.15);
 }
-.sidebar .nav-list .nav-item span,
-.sidebar .nav-list .nav-item_inner span {
-  font-size: 14px;
-}
-.sidebar .nav-list .nav-item svg:not(.indicator) path,
-.sidebar .nav-list .nav-item_inner svg:not(.indicator) path {
-  fill: var(--clr-black-200);
+
+html::-webkit-scrollbar-thumb {
+  background-color: rgba(var(--clr-orange-000-rgb), 1);
+  border-radius: 10px;
+  border: 4px solid transparent;
+  -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
-.sidebar .nav-list .nav-item .indicator,
-.sidebar .nav-list .nav-item_inner .indicator {
-  height: 6px;
-  width: 10px;
-  margin-left: auto;
-  transition: 0.2s ease-in-out;
-}
-.sidebar .nav-list .nav-item .indicator path,
-.sidebar .nav-list .nav-item_inner .indicator path {
-  transition: 0.2s ease-in-out;
-}
-.sidebar .nav-list .nav-item:hover,
-.sidebar .nav-list .nav-item_inner:hover {
-  color: var(--clr-white-100);
-}
-.sidebar .nav-list .nav-item.nav-item_active,
-.sidebar .nav-list .nav-item_inner.nav-item_active {
-  color: var(--clr-white-000);
-}
-.sidebar .nav-list .nav-item.nav-item_active svg:not(.indicator) path,
-.sidebar .nav-list .nav-item_inner.nav-item_active svg:not(.indicator) path {
-  fill: var(--clr-orange-000);
-}
-.sidebar .nav-list .nav-item.nav-item_active .indicator,
-.sidebar .nav-list .nav-item_inner.nav-item_active .indicator {
-  transform: rotate(-180deg);
-}
-.sidebar .nav-list .nav-item.nav-item_active .indicator path,
-.sidebar .nav-list .nav-item_inner.nav-item_active .indicator path {
-  stroke: var(--clr-orange-000);
-}
-.sidebar .nav-list .nav-item {
-  position: relative;
-}
-.sidebar .nav-list .nav-item.nav-item_active::after {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 30px;
-  top: 50%;
-  transform: translateY(-50%);
-  right: -30px;
+html::-webkit-scrollbar-thumb:hover {
   background-color: var(--clr-orange-000);
+  border-radius: 10px;
+  border: 4px solid transparent;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
-.sidebar .nav-list .nav-item_inner {
-  gap: 12px;
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
 }
-.sidebar .nav-list .nav-item_inner span {
-  font-size: 12px;
-}/*# sourceMappingURL=all.css.map */ight: 100%;
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+a {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  color: unset;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.headline1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0em;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: inherit;
+  text-transform: inherit;
+}
+@media screen and (max-width: 1500px) {
+  .headline1 {
+    font-size: 24px;
+  }
+}
+
+.headline2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0em;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: inherit;
+  text-transform: inherit;
+}
+@media screen and (max-width: 1500px) {
+  .headline2 {
+    font-size: 20px;
+  }
+}
+
+.headline3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
   letter-spacing: 0em;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -144,28 +168,6 @@ header .balance-wrap .orange {
 
 .fw-3 {
   font-weight: 300;
-}
-
-.container {
-  width: 1200px;
-  margin-inline: auto;
-  padding-inline: 26px;
-}
-@media screen and (max-width: 1025px) {
-  .container {
-    width: 960px;
-  }
-}
-@media screen and (max-width: 801px) {
-  .container {
-    width: 740px;
-  }
-}
-@media screen and (max-width: 640px) {
-  .container {
-    width: 100%;
-    padding-inline: 20px;
-  }
 }
 
 section {
@@ -217,7 +219,24 @@ section {
 
 li {
   list-style: none;
-}/*# sourceMappingURL=all.css.map */dropdown .dropdown-button img {
+}/*# sourceMappingURL=all.css.map */ input.custom-checkbox:checked ~ span {
+  color: var(--clr-black-000);
+}
+
+.dropdown {
+  position: relative;
+  z-index: 1;
+}
+.dropdown .dropdown-button {
+  gap: 12px;
+  padding: 10px;
+  padding-right: 16px;
+  background-color: var(--clr-white-000);
+  box-shadow: 0px 10px 20px rgba(var(--clr-black-000-rgb), 0.07);
+  border-radius: 100px;
+  z-index: 1;
+}
+.dropdown .dropdown-button img {
   --size: 40px;
   width: var(--size);
   height: var(--size);
@@ -229,10 +248,10 @@ li {
 .dropdown .dropdown-content {
   position: absolute;
   top: 0px;
-  left: 0px;
   right: 0px;
+  min-width: 190px;
+  width: 100%;
   padding: 20px;
-  padding-top: 80px;
   background-color: var(--clr-white-000);
   border-radius: 30px 30px 10px 10px;
   border: 1px solid var(--clr-white-100);
@@ -243,6 +262,9 @@ li {
   visibility: hidden;
   transform-origin: top;
   transition: 0.2s ease-in-out;
+}
+.dropdown .dropdown-content .content-header {
+  margin-bottom: 40px;
 }
 .dropdown .dropdown-content .nav-list {
   display: flex;
@@ -267,6 +289,14 @@ li {
   visibility: visible;
 }
 
+@media screen and (max-width: 460px) {
+  .dropdown .dropdown-button {
+    padding-right: 10px;
+  }
+  .dropdown .dropdown-button span, .dropdown .dropdown-button svg {
+    display: none;
+  }
+}
 .collapsible-wrap .collapsible-content {
   max-height: 0px;
   overflow-y: hidden;
@@ -282,16 +312,21 @@ li {
 
 .tab-bar {
   display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-inline: auto;
+  justify-content: center;
+  width: 100%;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  /* Works on Chrome, Edge, and Safari */
+}
+.tab-bar::-webkit-scrollbar {
+  height: 0px;
 }
 .tab-bar .tab-button {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.025em;
+  white-space: nowrap;
   text-transform: unset;
   color: var(--clr-black-100);
   border-bottom: 2px solid transparent;
@@ -320,4 +355,10 @@ li {
 }
 .tab-content-wrap .tab-content.active-content {
   display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .tab-bar {
+    justify-content: unset;
+  }
 }/*# sourceMappingURL=all.css.map */
