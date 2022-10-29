@@ -38,6 +38,10 @@
         gap: 6px;
         transition: 0.2s ease-in-out;
 
+        &:hover
+        {
+            border-bottom: 2px solid var(--clr-white-100);
+        }
         &.active-tab 
         {
             color: var(--clr-orange-000);
